@@ -1,0 +1,81 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.Imaging.jpeg, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    painel: TPanel;
+    background: TImage;
+    trem: TImage;
+    Timer1: TTimer;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Image2: TImage;
+    procedure Timer1Timer(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+   {Verifica se a tecla pressionada foi a Seta Esquerda}
+  if Key = VK_LEFT then
+  begin
+    {Verifica se o personagem não irá passar do limite da margem no lado esquerdo}
+    if Image2.Left - 15 > 0 then
+      Image2.Left := Image2.Left - 15;
+  end;
+  {Verifica se a tecla pressionada foi a Seta Direita}
+  if Key = VK_RIGHT then
+  begin
+    {Verifica se o personagem não irá passar do limite da margem no lado direito}
+    if Image2.Left + 15 < 900 then
+      Image2.Left := Image2.Left + 15;
+  end;
+  {Verifica se a tecla pressionada foi a Seta Cima}
+  if Key = VK_UP then
+  begin
+    {Verifica se o personagem não irá passar do limite da margem no lado cima}
+    if Image2.Top - 15 > 500 then
+      Image2.Top := Image2.Top - 15;
+  end;
+  {Verifica se a tecla pressionada foi a Seta Baixo}
+  if Key = VK_DOWN then
+  begin
+    {Verifica se o personagem não irá passar do limite da margem no lado de baixo}
+    if Image2.Top + 15 < 585 then
+      Image2.Top := Image2.Top + 15;
+  end;
+end;
+
+procedure TForm1.Timer1Timer(Sender: TObject);
+begin
+  {Move o trem para a esquerda em 10 pixels a cada 0,03 segundos}
+  trem.Left := trem.Left - 10;
+end;
+
+
+
+
+
+end.

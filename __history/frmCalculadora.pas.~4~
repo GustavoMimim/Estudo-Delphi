@@ -1,0 +1,139 @@
+unit frmCalculadora;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TForm1 = class(TForm)
+    um: TSpeedButton;
+    dois: TSpeedButton;
+    tres: TSpeedButton;
+    quatro: TSpeedButton;
+    cinco: TSpeedButton;
+    seis: TSpeedButton;
+    virgula: TSpeedButton;
+    zero: TSpeedButton;
+    multiplicar: TSpeedButton;
+    maismenos: TSpeedButton;
+    dividir: TSpeedButton;
+    menos: TSpeedButton;
+    igual: TSpeedButton;
+    sete: TSpeedButton;
+    oito: TSpeedButton;
+    nove: TSpeedButton;
+    limpar: TSpeedButton;
+    mais: TSpeedButton;
+    visor: TEdit;
+    procedure umClick(Sender: TObject);
+    procedure doisClick(Sender: TObject);
+    procedure tresClick(Sender: TObject);
+    procedure quatroClick(Sender: TObject);
+    procedure cincoClick(Sender: TObject);
+    procedure seisClick(Sender: TObject);
+    procedure seteClick(Sender: TObject);
+    procedure oitoClick(Sender: TObject);
+    procedure noveClick(Sender: TObject);
+    procedure maisClick(Sender: TObject);
+    procedure menosClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  valor1: real;
+  valor2: real;
+  funcao: integer;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.cincoClick(Sender: TObject);
+begin
+
+  visor.Text := visor.Text + (Sender as TSpeedButton).Caption;
+
+end;
+
+procedure TForm1.doisClick(Sender: TObject);
+begin
+
+  visor.Text := visor.Text + (Sender as TSpeedButton).Caption;
+
+end;
+
+procedure TForm1.maisClick(Sender: TObject);
+begin
+
+  valor1 := StrToFloat(visor.Text);
+  visor.Text := '';
+  funcao := 1;
+
+end;
+
+procedure TForm1.menosClick(Sender: TObject);
+begin
+
+  valor1 := StrToFloat(visor.Text);
+  visor.Text := '';
+  funcao := 2;
+
+end;
+
+procedure TForm1.noveClick(Sender: TObject);
+begin
+
+  visor.Text := visor.Text + (Sender as TSpeedButton).Caption;
+
+end;
+
+procedure TForm1.oitoClick(Sender: TObject);
+begin
+
+  visor.Text := visor.Text + (Sender as TSpeedButton).Caption;
+
+end;
+
+procedure TForm1.quatroClick(Sender: TObject);
+begin
+
+  visor.Text := visor.Text + (Sender as TSpeedButton).Caption;
+
+end;
+
+procedure TForm1.seisClick(Sender: TObject);
+begin
+
+  visor.Text := visor.Text + (Sender as TSpeedButton).Caption;
+
+end;
+
+procedure TForm1.seteClick(Sender: TObject);
+begin
+
+  visor.Text := visor.Text + (Sender as TSpeedButton).Caption;
+
+end;
+
+procedure TForm1.tresClick(Sender: TObject);
+begin
+
+  visor.Text := visor.Text + (Sender as TSpeedButton).Caption;
+
+end;
+
+procedure TForm1.umClick(Sender: TObject);
+
+begin
+
+  visor.Text := visor.Text + (Sender as TSpeedButton).Caption;
+
+end;
+
+end.
