@@ -1,0 +1,131 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.Imaging.jpeg, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    painel: TPanel;
+    background: TImage;
+    trem: TImage;
+    primeiroTrem: TTimer;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    personagem1: TImage;
+    segundoTrem: TTimer;
+    joiaDoTempo: TTimer;
+    nuvem1: TImage;
+    ceu: TImage;
+    nuvem2: TImage;
+    nuvem3: TImage;
+    procedure tremAndar();
+    procedure primeiroTremTimer(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure segundoTremTimer(Sender: TObject);
+    procedure joiaDoTempoTimer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  lado: Integer := 1; //responsável pelo lado em que o trem irá correr
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.joiaDoTempoTimer(Sender: TObject);
+
+  {Variável criada para marcar em que volta o trem está
+  (1 = esquerda para direita; 2 = direita para esquerda )}
+
+begin
+  if lado = 2 then
+  begin
+    primeiroTrem.Enabled := False;
+    segundoTrem.Enabled := True;
+    trem.Top := 344;
+    trem.Left := 1000;
+    lado := 1;
+  end;
+  if lado = 1 then
+  begin
+    primeiroTrem.Enabled := True;
+    segundoTrem.Enabled := False;
+    trem.Top := 168;
+    trem.Left := -750;
+    lado := 2;
+  end;
+end;
+
+procedure TForm1.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  {Verifica se a tecla pressionada foi a Seta Esquerda}
+  if Key = VK_LEFT then
+  begin
+    {Verifica se o personagem não irá passar do limite da margem esquerda}
+    if personagem1.Left - 15 > 0 then
+      personagem1.Left := personagem1.Left - 15;
+  end;
+  {Verifica se a tecla pressionada foi a Seta Direita}
+  if Key = VK_RIGHT then
+  begin
+    {Verifica se o personagem não irá passar do limite da margem direita}
+    if personagem1.Left + 15 < 900 then
+      personagem1.Left := personagem1.Left + 15;
+  end;
+  {Verifica se a tecla pressionada foi a Seta Cima}
+  if Key = VK_UP then
+  begin
+    {Verifica se o personagem não irá passar do limite da margem de cima}
+    if personagem1.Top - 15 > 500 then
+      personagem1.Top := personagem1.Top - 15;
+  end;
+  {Verifica se a tecla pressionada foi a Seta Baixo}
+  if Key = VK_DOWN then
+  begin
+    {Verifica se o personagem não irá passar do limite da margem de baixo}
+    if personagem1.Top + 15 < 585 then
+      personagem1.Top := personagem1.Top + 15;
+  end;
+end;
+
+procedure TForm1.primeiroTremTimer(Sender: TObject);
+begin
+  {Chama a função a cada 0,09 segundos (de acordo com o timer), passando 1 (esquerda) como parâmetro}
+  tremAndar();
+end;
+
+procedure TForm1.segundoTremTimer(Sender: TObject);
+begin
+  {Chama a função a cada 0,09 segundos (de acordo com o timer), passando 2 (direita) como parâmetro}
+  tremAndar();
+end;
+
+procedure TForm1.tremAndar();
+begin
+  {Move o trem para a Esquerda em 10 pixels}
+  if lado = 1 then
+  begin
+    trem.Left := trem.Left - 10;
+  end
+  {Move o trem para a Direita em 10 pixels}
+  else
+  begin
+    trem.Left := trem.Left + 10;
+  end;
+end;
+
+end.
