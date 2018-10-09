@@ -1,0 +1,97 @@
+inherited Form1_iPhone55in: TForm1_iPhone55in
+  ClientHeight = 716
+  ClientWidth = 414
+  DesignerMasterStyle = 2
+  inherited ctrlPrincipal: TTabControl
+    Size.Width = 414.000000000000000000
+    Size.Height = 716.000000000000000000
+    Sizes = (
+      414s
+      716s
+      414s
+      716s
+      414s
+      716s
+      414s
+      716s)
+    inherited tabLogin: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Size.Width = 11.000000000000000000
+      Size.Height = 11.000000000000000000
+      ExplicitSize.cx = 67.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      inherited painelLogar: TPanel
+        inherited edtSenha: TEdit
+          Size.Height = 30.000000000000000000
+        end
+        inherited edtUsuario: TEdit
+          Size.Height = 30.000000000000000000
+        end
+      end
+      inherited ToolBar1: TToolBar
+        Size.Width = 414.000000000000000000
+        Size.Height = 44.000000000000000000
+        inherited cdMenu: TSpeedButton
+          Size.Width = 44.000000000000000000
+          Size.Height = 44.000000000000000000
+        end
+      end
+      inherited TabControl1: TTabControl
+        Size.Width = 414.000000000000000000
+        Size.Height = 672.000000000000000000
+        Sizes = (
+          414s
+          658s
+          414s
+          658s)
+        inherited Tab1: TTabItem
+          Size.Width = 207.000000000000000000
+          Size.Height = 14.000000000000000000
+          ExplicitSize.cx = 69.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+        end
+        inherited Tab2: TTabItem
+          Size.Width = 207.000000000000000000
+          Size.Height = 14.000000000000000000
+          ExplicitSize.cx = 69.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+        end
+      end
+    end
+    inherited tabPrincipal: TTabItem [1]
+      CustomIcon = <
+        item
+        end>
+      Size.Width = 11.000000000000000000
+      Size.Height = 11.000000000000000000
+      ExplicitSize.cx = 84.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+    end
+    inherited tabConf: TTabItem [2]
+      Size.Width = 11.000000000000000000
+      Size.Height = 11.000000000000000000
+      ExplicitSize.cx = 110.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+    inherited tabCadastrar: TTabItem [3]
+      Size.Width = 11.000000000000000000
+      Size.Height = 11.000000000000000000
+      ExplicitSize.cx = 105.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited Panel2: TPanel
+        inherited edtUsuarioCadastrar: TEdit
+          Size.Height = 30.000000000000000000
+        end
+        inherited edtSenhaCadastrar: TEdit
+          Size.Height = 30.000000000000000000
+        end
+        inherited senhaCad: TLabel [2]
+        end
+        inherited usuarioCad: TLabel [3]
+        end
+      end
+    end
+  end
+end

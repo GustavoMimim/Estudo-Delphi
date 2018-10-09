@@ -1,0 +1,38 @@
+﻿inherited Form1_SSW3: TForm1_SSW3
+  ClientHeight = 183
+  ClientWidth = 183
+  DesignerMasterStyle = 2
+  inherited ctrlPrincipal: TTabControl
+    Size.Width = 183.000000000000000000
+    Size.Height = 183.000000000000000000
+    Sizes = (
+      183s
+      168s
+      183s
+      168s)
+    inherited tabLogin: TTabItem
+      Size.Width = 91.000000000000000000
+      Size.Height = 15.000000000000000000
+      ExplicitSize.cx = 183.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited Usuário: TLabel [0]
+      end
+      inherited Senha: TLabel [1]
+      end
+      inherited edtSenha: TText [2]
+      end
+      inherited edtUsuario: TText [3]
+      end
+      inherited Logar: TButton [4]
+      end
+      inherited Panel1: TPanel [5]
+      end
+    end
+    inherited TabPrincipal: TTabItem
+      Size.Width = 92.000000000000000000
+      Size.Height = 15.000000000000000000
+      ExplicitSize.cx = 92.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+  end
+end

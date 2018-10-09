@@ -1,0 +1,32 @@
+﻿inherited Form1_Macintosh: TForm1_Macintosh
+  DesignerMasterStyle = 2
+  inherited ctrlPrincipal: TTabControl
+    Sizes = (
+      320s
+      454s
+      320s
+      454s)
+    inherited tabLogin: TTabItem
+      Size.Width = 71.000000000000000000
+      ExplicitSize.cx = 73.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      inherited Usuário: TLabel [0]
+      end
+      inherited Senha: TLabel [1]
+      end
+      inherited edtSenha: TText [2]
+      end
+      inherited edtUsuario: TText [3]
+      end
+      inherited Logar: TButton [4]
+      end
+      inherited Panel1: TPanel [5]
+      end
+    end
+    inherited TabPrincipal: TTabItem
+      Size.Width = 89.000000000000000000
+      ExplicitSize.cx = 73.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+    end
+  end
+end

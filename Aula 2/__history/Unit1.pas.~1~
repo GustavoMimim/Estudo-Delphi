@@ -1,0 +1,40 @@
+unit Unit1;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Controls.Presentation, FMX.Objects, FMX.TabControl;
+
+type
+  TForm1 = class(TForm)
+    ctrlPrincipal: TTabControl;
+    tabLogin: TTabItem;
+    TabPrincipal: TTabItem;
+    Usuário: TLabel;
+    edtSenha: TText;
+    Logar: TButton;
+    Senha: TLabel;
+    edtUsuario: TText;
+    Panel1: TPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.fmx}
+{$R *.iPhone55in.fmx IOS}
+{$R *.LgXhdpiPh.fmx ANDROID}
+{$R *.SSW3.fmx ANDROID}
+{$R *.GGlass.fmx ANDROID}
+{$R *.XLgXhdpiTb.fmx ANDROID}
+{$R *.Macintosh.fmx MACOS}
+
+end.

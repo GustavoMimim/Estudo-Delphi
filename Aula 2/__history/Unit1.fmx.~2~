@@ -1,0 +1,225 @@
+﻿object Form1: TForm1
+  Left = 475
+  Top = 112
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 330
+  Position = Designed
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  Left = 475
+  Top = 112
+  DesignerMasterStyle = 0
+  object labelNome: TLabel
+    Position.X = 264.000000000000000000
+    Position.Y = 14.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'labelNome'
+    Visible = False
+    TabOrder = 4
+  end
+  object ctrlPrincipal: TTabControl
+    Align = Client
+    Size.Width = 330.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 1
+    TabOrder = 0
+    TabPosition = PlatformDefault
+    Sizes = (
+      330s
+      431s
+      330s
+      431s
+      330s
+      431s
+      330s
+      431s)
+    object tabLogin: TTabItem
+      CanFocus = False
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 50.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Login'
+      ExplicitSize.cx = 67.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object Panel1: TPanel
+        Position.X = 16.000000000000000000
+        Position.Y = 38.000000000000000000
+        Size.Width = 289.000000000000000000
+        Size.Height = 379.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        object edtSenha: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          Password = True
+          Position.X = 88.000000000000000000
+          Position.Y = 160.000000000000000000
+          Size.Width = 161.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object edtUsuario: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          Position.X = 88.000000000000000000
+          Position.Y = 88.000000000000000000
+          Size.Width = 161.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object Usuário: TLabel
+        Position.X = 32.000000000000000000
+        Position.Y = 131.000000000000000000
+        Size.Width = 41.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Usu'#225'rio'
+        TabOrder = 0
+      end
+      object Senha: TLabel
+        Position.X = 38.000000000000000000
+        Position.Y = 204.000000000000000000
+        Size.Width = 57.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Senha'
+        TabOrder = 1
+      end
+      object Logar: TButton
+        Position.X = 104.000000000000000000
+        Position.Y = 296.000000000000000000
+        Size.Width = 121.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'Logar'
+        OnClick = LogarClick
+      end
+      object FloatAnimation1: TFloatAnimation
+        AutoReverse = True
+        Duration = 1.000000000000000000
+        PropertyName = 'Opacity'
+        StartValue = 0.000000000000000000
+        StopValue = 0.000000000000000000
+      end
+    end
+    object tabCadastrar: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 71.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Cadastrar'
+      object Panel2: TPanel
+        Position.X = 16.000000000000000000
+        Position.Y = 48.000000000000000000
+        Size.Width = 289.000000000000000000
+        Size.Height = 281.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        object edtSenhaCadastrar: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          Password = True
+          Position.X = 88.000000000000000000
+          Position.Y = 104.000000000000000000
+          Size.Width = 161.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object edtUsuarioCadastrar: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          Position.X = 88.000000000000000000
+          Position.Y = 35.000000000000000000
+          Size.Width = 161.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object Label1: TLabel
+        Position.X = 40.000000000000000000
+        Position.Y = 91.000000000000000000
+        Size.Width = 41.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Usu'#225'rio'
+        TabOrder = 0
+      end
+      object Label2: TLabel
+        Position.X = 44.000000000000000000
+        Position.Y = 156.000000000000000000
+        Size.Width = 57.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Senha'
+        TabOrder = 1
+      end
+      object btnCadastrar: TButton
+        Position.X = 96.000000000000000000
+        Position.Y = 256.000000000000000000
+        Size.Width = 121.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'Cadastrar'
+        OnClick = btnCadastrarClick
+      end
+    end
+    object tabPrincipal: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 66.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Principal'
+      ExplicitSize.cx = 84.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object msg: TLabel
+        Position.X = 24.000000000000000000
+        Position.Y = 30.000000000000000000
+        Size.Width = 73.000000000000000000
+        Size.Height = 27.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Ol'#225'!'
+        TabOrder = 0
+      end
+    end
+    object tabConf: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 96.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Configura'#231#245'es'
+      ExplicitSize.cx = 110.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+  end
+end

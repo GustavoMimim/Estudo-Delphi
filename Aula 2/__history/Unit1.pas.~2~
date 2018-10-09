@@ -1,0 +1,107 @@
+unit Unit1;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Controls.Presentation, FMX.Objects, FMX.TabControl, FMX.Edit, FMX.Ani;
+
+type
+  TForm1 = class(TForm)
+    labelNome: TLabel;
+    ctrlPrincipal: TTabControl;
+    tabLogin: TTabItem;
+    Panel1: TPanel;
+    edtSenha: TEdit;
+    edtUsuario: TEdit;
+    Usuário: TLabel;
+    Senha: TLabel;
+    Logar: TButton;
+    FloatAnimation1: TFloatAnimation;
+    tabPrincipal: TTabItem;
+    msg: TLabel;
+    tabConf: TTabItem;
+    tabCadastrar: TTabItem;
+    Panel2: TPanel;
+    edtSenhaCadastrar: TEdit;
+    edtUsuarioCadastrar: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    btnCadastrar: TButton;
+    procedure LogarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure btnCadastrarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  usuario: array[1..10] of string;
+  senha: array[1..10] of string;
+
+implementation
+
+{$R *.fmx}
+{$R *.iPhone55in.fmx IOS}
+{$R *.LgXhdpiPh.fmx ANDROID}
+{$R *.SSW3.fmx ANDROID}
+{$R *.GGlass.fmx ANDROID}
+{$R *.XLgXhdpiTb.fmx ANDROID}
+{$R *.Macintosh.fmx MACOS}
+
+procedure TForm1.btnCadastrarClick(Sender: TObject);
+var
+  i: integer;
+
+begin
+  i := 0;
+  while i <= 10 do
+  begin
+    if usuario[i] = '' then
+    begin
+    usuario[i] := edtUsuarioCadastrar.Text;
+    senha[i] := edtSenhaCadastrar.Text;
+    end;
+  end;
+
+    if usuario[i] = '' then
+      begin
+        ShowMessage('oi');// usar case e break
+      end;
+  end;
+
+
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  tabLogin.IsSelected := true;
+  tabCadastrar.Visible := true;
+  tabPrincipal.Visible := false;
+  tabConf.Visible := false;
+end;
+
+procedure TForm1.LogarClick(Sender: TObject);
+begin
+  if (Trim(edtUsuario.Text) = '') Or (Trim(edtSenha.Text) = '') then
+  begin
+    ShowMessage('Usuário e senha precisam estar preenchidos!');
+  end
+  else
+  begin
+    ShowMessage('Logado com sucesso!');
+    tabLogin.Visible := false;
+    tabPrincipal.Visible := true;
+    tabConf.Visible := true;
+    ctrlPrincipal.ActiveTab := tabPrincipal;
+    labelNome.Text := edtUsuario.Text;
+    labelNome.Visible := True;
+  end;
+end;
+
+end.

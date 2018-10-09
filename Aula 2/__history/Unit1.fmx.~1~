@@ -1,0 +1,101 @@
+﻿object Form1: TForm1
+  Left = 475
+  Top = 112
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 320
+  Position = Designed
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  Left = 475
+  Top = 112
+  DesignerMasterStyle = 0
+  object ctrlPrincipal: TTabControl
+    Align = Client
+    Size.Width = 320.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = PlatformDefault
+    Sizes = (
+      320s
+      454s
+      320s
+      454s)
+    object tabLogin: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 67.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tabLogin'
+      object Panel1: TPanel
+        Position.X = 16.000000000000000000
+        Position.Y = 38.000000000000000000
+        Size.Width = 289.000000000000000000
+        Size.Height = 379.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+      end
+      object Usuário: TLabel
+        Position.X = 32.000000000000000000
+        Position.Y = 132.000000000000000000
+        Size.Width = 41.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Usu'#225'rio'
+        TabOrder = 0
+      end
+      object Senha: TLabel
+        Position.X = 32.000000000000000000
+        Position.Y = 204.000000000000000000
+        Size.Width = 57.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Senha'
+        TabOrder = 1
+      end
+      object edtSenha: TText
+        Position.X = 88.000000000000000000
+        Position.Y = 196.000000000000000000
+        Size.Width = 193.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object edtUsuario: TText
+        Position.X = 88.000000000000000000
+        Position.Y = 124.000000000000000000
+        Size.Width = 193.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Logar: TButton
+        Position.X = 104.000000000000000000
+        Position.Y = 296.000000000000000000
+        Size.Width = 121.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'Logar'
+      end
+    end
+    object TabPrincipal: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 84.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabPrincipal'
+    end
+  end
+end

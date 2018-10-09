@@ -1,0 +1,38 @@
+﻿inherited Form1_iPhone55in: TForm1_iPhone55in
+  ClientHeight = 716
+  ClientWidth = 414
+  DesignerMasterStyle = 2
+  inherited ctrlPrincipal: TTabControl
+    Size.Width = 414.000000000000000000
+    Size.Height = 716.000000000000000000
+    Sizes = (
+      414s
+      702s
+      414s
+      702s)
+    inherited tabLogin: TTabItem
+      Size.Width = 207.000000000000000000
+      Size.Height = 14.000000000000000000
+      ExplicitSize.cx = 414.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited Usuário: TLabel [0]
+      end
+      inherited Senha: TLabel [1]
+      end
+      inherited edtSenha: TText [2]
+      end
+      inherited edtUsuario: TText [3]
+      end
+      inherited Logar: TButton [4]
+      end
+      inherited Panel1: TPanel [5]
+      end
+    end
+    inherited TabPrincipal: TTabItem
+      Size.Width = 207.000000000000000000
+      Size.Height = 14.000000000000000000
+      ExplicitSize.cx = 207.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+  end
+end
