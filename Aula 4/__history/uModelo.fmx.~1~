@@ -1,0 +1,41 @@
+object frmUModelo: TfrmUModelo
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 480
+  ClientWidth = 320
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+  object Circle2: TCircle
+    Position.X = 240.000000000000000000
+    Position.Y = 392.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Circle1: TCircle
+    Position.X = 240.000000000000000000
+    Position.Y = 336.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object btnSalvar: TSpeedButton
+    Position.X = 239.000000000000000000
+    Position.Y = 337.000000000000000000
+    Size.Width = 51.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Salvar'
+  end
+  object btnCancelar: TSpeedButton
+    Position.X = 239.000000000000000000
+    Position.Y = 393.000000000000000000
+    Size.Width = 52.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Voltar'
+  end
+end

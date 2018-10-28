@@ -1,0 +1,75 @@
+inherited Form1_LgXhdpiPh: TForm1_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 2
+  inherited ctrlPrincipal: TTabControl
+    Size.Width = 450.000000000000000000
+    Size.Height = 695.000000000000000000
+    Sizes = (
+      450s
+      695s
+      450s
+      695s
+      450s
+      695s
+      450s
+      695s)
+    inherited tabLogin: TTabItem
+      CustomIcon = <
+        item
+        end>
+      ExplicitSize.cx = 67.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      inherited ToolBar1: TToolBar
+        Size.Width = 450.000000000000000000
+        Size.Height = 48.000000000000000000
+        inherited cdMenu: TSpeedButton
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+        end
+      end
+      inherited TabControl1: TTabControl
+        Size.Width = 450.000000000000000000
+        Size.Height = 647.000000000000000000
+        Sizes = (
+          450s
+          632s
+          450s
+          632s)
+        inherited Tab1: TTabItem
+          Size.Width = 225.000000000000000000
+          Size.Height = 15.000000000000000000
+          ExplicitSize.cx = 69.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+        end
+        inherited Tab2: TTabItem
+          Size.Width = 225.000000000000000000
+          Size.Height = 15.000000000000000000
+          ExplicitSize.cx = 69.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+        end
+      end
+    end
+    inherited tabPrincipal: TTabItem [1]
+      CustomIcon = <
+        item
+        end>
+      ExplicitSize.cx = 84.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+    end
+    inherited tabConf: TTabItem [2]
+      ExplicitSize.cx = 110.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+    inherited tabCadastrar: TTabItem [3]
+      ExplicitSize.cx = 114.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited Panel2: TPanel
+        inherited senhaCad: TLabel [2]
+        end
+        inherited usuarioCad: TLabel [3]
+        end
+      end
+    end
+  end
+end

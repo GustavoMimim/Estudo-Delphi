@@ -1,0 +1,97 @@
+inherited frmCadastroAluno: TfrmCadastroAluno
+  Caption = 'frmUModelo2'
+  DesignerMasterStyle = 3
+  inherited lytBase: TLayout
+    inherited btnCancelar: TSpeedButton
+      Text = 'Apagar'
+    end
+    object lytTitulo: TLayout
+      Align = Top
+      Size.Width = 320.000000000000000000
+      Size.Height = 73.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      object lblTitulo: TLabel
+        StyledSettings = [Family, FontColor]
+        Position.X = 48.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 233.000000000000000000
+        Size.Height = 57.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 26.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'Cadastro de alunos'
+        TabOrder = 0
+      end
+    end
+    object Layout1: TLayout
+      Align = Top
+      Position.Y = 173.000000000000000000
+      Size.Width = 320.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      object lblEmail: TLabel
+        Position.X = 56.000000000000000000
+        Position.Y = 27.000000000000000000
+        Text = 'Email:'
+        TabOrder = 0
+      end
+    end
+    object Layout2: TLayout
+      Align = Top
+      Position.Y = 123.000000000000000000
+      Size.Width = 320.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      object lblNome: TLabel
+        Position.X = 56.000000000000000000
+        Position.Y = 27.000000000000000000
+        Text = 'Nome:'
+        TabOrder = 0
+      end
+    end
+    object Layout3: TLayout
+      Align = Top
+      Position.Y = 73.000000000000000000
+      Size.Width = 320.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      object lblRA: TLabel
+        Position.X = 56.000000000000000000
+        Position.Y = 27.000000000000000000
+        Text = 'RA:'
+        TabOrder = 0
+      end
+      object Edit1: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 3
+        Position.X = 144.000000000000000000
+        Position.Y = 16.000000000000000000
+        Size.Width = 145.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Edit2: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 2
+        Position.X = 144.000000000000000000
+        Position.Y = 66.000000000000000000
+        Size.Width = 145.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Edit3: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.X = 144.000000000000000000
+        Position.Y = 116.000000000000000000
+        Size.Width = 145.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+  end
+end

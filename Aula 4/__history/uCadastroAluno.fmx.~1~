@@ -1,0 +1,4 @@
+inherited frmCadastroAluno: TfrmCadastroAluno
+  Caption = 'frmUModelo2'
+  DesignerMasterStyle = 3
+end

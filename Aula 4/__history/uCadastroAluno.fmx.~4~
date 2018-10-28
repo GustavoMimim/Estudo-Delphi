@@ -1,0 +1,12 @@
+inherited frmCadastroAluno: TfrmCadastroAluno
+  Caption = 'frmUModelo2'
+  DesignerMasterStyle = 3
+  inherited lylBase: TLayout
+    object CheckBox1: TCheckBox
+      Position.X = 104.000000000000000000
+      Position.Y = 232.000000000000000000
+      TabOrder = 4
+      Text = 'CheckBox1'
+    end
+  end
+end

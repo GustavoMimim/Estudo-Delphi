@@ -1,0 +1,62 @@
+inherited Form1_LgXhdpiPh: TForm1_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 2
+  inherited ctrlPrincipal: TTabControl
+    Size.Width = 450.000000000000000000
+    Size.Height = 695.000000000000000000
+    Sizes = (
+      450s
+      695s
+      450s
+      695s
+      450s
+      695s
+      450s
+      695s)
+    inherited tabLogin: TTabItem
+      ExplicitSize.cx = 67.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+    end
+    inherited tabCadastrar: TTabItem
+      ExplicitSize.cx = 114.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+    inherited tabPrincipal: TTabItem
+      ExplicitSize.cx = 84.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      inherited ctrlApp: TTabControl
+        Size.Width = 450.000000000000000000
+        Size.Height = 647.000000000000000000
+        Sizes = (
+          450s
+          647s
+          450s
+          647s)
+        inherited Tab1: TTabItem
+          ExplicitSize.cx = 76.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+        end
+        inherited Tab2: TTabItem
+          ExplicitSize.cx = 103.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+          inherited lytPrincipal: TLayout
+            Size.Width = 450.000000000000000000
+            Size.Height = 647.000000000000000000
+          end
+        end
+      end
+      inherited ToolBar1: TToolBar
+        Size.Width = 450.000000000000000000
+      end
+      inherited menu: TMultiView
+        Size.Width = 250.000000000000000000
+        Size.Height = 50.000000000000000000
+      end
+    end
+    inherited tabConf: TTabItem
+      ExplicitSize.cx = 110.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+  end
+end

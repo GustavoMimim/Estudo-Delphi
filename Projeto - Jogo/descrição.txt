@@ -1,0 +1,1 @@
+Jogo de plataforma com um inimigo para duelar até restar apenas 1!

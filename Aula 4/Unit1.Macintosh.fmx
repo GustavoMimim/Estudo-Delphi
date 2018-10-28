@@ -1,0 +1,48 @@
+inherited Form1_Macintosh: TForm1_Macintosh
+  DesignerMasterStyle = 2
+  inherited ctrlPrincipal: TTabControl
+    Sizes = (
+      338s
+      450s
+      338s
+      450s
+      338s
+      450s
+      338s
+      450s)
+    inherited tabLogin: TTabItem
+      ExplicitSize.cx = 67.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+    end
+    inherited tabCadastrar: TTabItem
+      ExplicitSize.cx = 73.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+    inherited tabPrincipal: TTabItem
+      ExplicitSize.cx = 84.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      inherited ctrlApp: TTabControl
+        Sizes = (
+          338s
+          402s
+          338s
+          402s)
+        inherited Tab1: TTabItem
+          ExplicitSize.cx = 76.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+        end
+        inherited Tab2: TTabItem
+          ExplicitSize.cx = 103.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+        end
+      end
+      inherited menu: TMultiView
+        Size.Width = 250.000000000000000000
+      end
+    end
+    inherited tabConf: TTabItem
+      ExplicitSize.cx = 110.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+  end
+end

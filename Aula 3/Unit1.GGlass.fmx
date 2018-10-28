@@ -1,0 +1,62 @@
+inherited Form1_GGlass: TForm1_GGlass
+  ClientHeight = 215
+  ClientWidth = 427
+  DesignerMasterStyle = 2
+  inherited ctrlPrincipal: TTabControl
+    Size.Width = 427.000000000000000000
+    Size.Height = 215.000000000000000000
+    Sizes = (
+      427s
+      215s
+      427s
+      215s
+      427s
+      215s
+      427s
+      215s)
+    inherited tabLogin: TTabItem
+      ExplicitSize.cx = 67.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+    end
+    inherited tabCadastrar: TTabItem
+      ExplicitSize.cx = 109.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+    inherited tabPrincipal: TTabItem
+      ExplicitSize.cx = 84.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      inherited ctrlApp: TTabControl
+        Size.Width = 427.000000000000000000
+        Size.Height = 167.000000000000000000
+        Sizes = (
+          427s
+          167s
+          427s
+          167s)
+        inherited Tab1: TTabItem
+          ExplicitSize.cx = 76.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+        end
+        inherited Tab2: TTabItem
+          ExplicitSize.cx = 103.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+          inherited lytPrincipal: TLayout
+            Size.Width = 427.000000000000000000
+            Size.Height = 167.000000000000000000
+          end
+        end
+      end
+      inherited ToolBar1: TToolBar
+        Size.Width = 427.000000000000000000
+      end
+      inherited menu: TMultiView
+        Size.Width = 250.000000000000000000
+        Size.Height = 50.000000000000000000
+      end
+    end
+    inherited tabConf: TTabItem
+      ExplicitSize.cx = 110.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+    end
+  end
+end

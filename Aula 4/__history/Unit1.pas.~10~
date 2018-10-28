@@ -1,0 +1,171 @@
+unit Unit1;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Controls.Presentation, FMX.Objects, FMX.TabControl, FMX.Edit, FMX.Ani,
+  FMX.MultiView, FMX.Layouts;
+
+type
+  TForm1 = class(TForm)
+    labelNome: TLabel;
+    ctrlPrincipal: TTabControl;
+    tabLogin: TTabItem;
+    painelLogar: TPanel;
+    edtSenha: TEdit;
+    edtUsuario: TEdit;
+    usuarioLog: TLabel;
+    senhaLog: TLabel;
+    btnLogar: TButton;
+    tabPrincipal: TTabItem;
+    tabConf: TTabItem;
+    tabCadastrar: TTabItem;
+    painelCadastro: TPanel;
+    edtUsuarioCadastrar: TEdit;
+    senhaCad: TLabel;
+    btnCadastrar: TButton;
+    ToolBar1: TToolBar;
+    cdMenu: TSpeedButton;
+    menu: TMultiView;
+    edtSenhaCadastrar: TEdit;
+    usuarioCad: TLabel;
+    ctrlApp: TTabControl;
+    Tab1: TTabItem;
+    Tab2: TTabItem;
+    Image1: TImage;
+    Calculadora: TSpeedButton;
+    lytPrincipal: TLayout;
+    Cadastrar: TSpeedButton;
+    btnAbrirCadastro: TButton;
+    procedure btnLogarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure btnCadastrarClick(Sender: TObject);
+    procedure CalculadoraClick(Sender: TObject);
+    procedure btnAbrirCadastroClick(Sender: TObject);
+    procedure CadastrarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure abrirForm(AFormClass: TComponentClass);
+  end;
+
+var
+  Form1: TForm1;
+  usuario: array[1..10] of string;
+  senha: array[1..10] of string;
+  FActiveForm: TForm;
+
+implementation
+
+{$R *.fmx}
+
+uses uCalculadora;
+{$R *.iPhone55in.fmx IOS}
+{$R *.LgXhdpiPh.fmx ANDROID}
+{$R *.SSW3.fmx ANDROID}
+{$R *.GGlass.fmx ANDROID}
+{$R *.XLgXhdpiTb.fmx ANDROID}
+{$R *.Macintosh.fmx MACOS}
+
+procedure TForm1.abrirForm(AFormClass: TComponentClass);
+var
+  layoutBase : TComponent;
+begin
+  if Assigned(FActiveForm) then
+  begin
+    if FActiveForm.ClassType = AFormClass then
+    begin
+      exit
+    end
+    else
+    begin
+      FActiveForm.DisposeOf;
+      FActiveForm := nil;
+    end;
+  end;
+  Application.CreateForm(AFormClass, FActiveForm);
+  layoutBase := FActiveForm.FindComponent('lytBase');
+  if Assigned(layoutBase) then
+    lytPrincipal.AddObject(TLayout(layoutBase));
+end;
+
+procedure TForm1.btnAbrirCadastroClick(Sender: TObject);
+begin
+  tabCadastrar.Visible := true;
+  tabLogin.Visible := false;
+  tabPrincipal.Visible := false;
+  tabConf.Visible := false;
+  ctrlPrincipal.ActiveTab := tabPrincipal;
+  labelNome.Text := edtUsuario.Text;
+  labelNome.Visible := True;
+end;
+
+procedure TForm1.btnCadastrarClick(Sender: TObject);
+var
+  i: integer;
+  sair: integer;
+
+begin
+  i := 0;
+  sair := 0;
+  while (i <= 10) Or (sair = 1) do
+  begin
+    if usuario[i] = '' then
+    begin
+      usuario[i] := edtUsuarioCadastrar.Text;
+      senha[i] := edtSenhaCadastrar.Text;
+      sair := 1;
+    end
+    else
+      i := i + 1;
+  end;
+
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  //ctrlPrincipal.ActiveTab := tabPrincipal;
+  tabLogin.IsSelected := true;
+  tabCadastrar.Visible := true;
+  tabPrincipal.Visible := false;
+  tabConf.Visible := false;
+end;
+
+procedure TForm1.btnLogarClick(Sender: TObject);
+begin
+  if (Trim(edtUsuario.Text) = '') Or (Trim(edtSenha.Text) = '') then
+  begin
+    ShowMessage('Usuário e senha precisam estar preenchidos!');
+  end
+  else
+  begin
+    ShowMessage('Logado com sucesso!');
+    tabLogin.Visible := false;
+    tabPrincipal.Visible := true;
+    tabConf.Visible := true;
+    ctrlPrincipal.ActiveTab := tabPrincipal;
+    labelNome.Text := edtUsuario.Text;
+    labelNome.Visible := True;
+  end;
+end;
+
+procedure TForm1.CadastrarClick(Sender: TObject);
+begin
+  ctrlApp.ActiveTab := Tab2;
+  abrirForm(frmCadastroAluno);
+  menu.HideMaster;
+end;
+
+procedure TForm1.CalculadoraClick(Sender: TObject);
+begin
+  ctrlApp.ActiveTab := Tab2;
+  abrirForm(TfrmCalculadora);
+  menu.HideMaster;
+
+end;
+
+end.

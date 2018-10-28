@@ -2,11 +2,11 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2018/10/06 08:39:28.000.284,=C:\Users\Aluno\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2018/10/06 09:21:36.000.236,E:\Curso Delphi\Aula 2\Unit1.fmx=C:\Users\Aluno\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
-    <Transaction>2018/10/06 09:21:36.000.236,E:\Curso Delphi\Aula 2\Unit1.pas=C:\Users\Aluno\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2018/10/06 09:22:10.000.959,E:\Curso Delphi\Aula 2\Project1.dproj=C:\Users\Aluno\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2018/10/06 09:21:36.000.236,C:\Users\Aluno\Documents\Embarcadero\Studio\Projects\Unit1.fmx=E:\Curso Delphi\Aula 2\Unit1.fmx</Transaction>
+    <Transaction>2018/10/06 09:21:36.000.236,C:\Users\Aluno\Documents\Embarcadero\Studio\Projects\Unit1.pas=E:\Curso Delphi\Aula 2\Unit1.pas</Transaction>
+    <Transaction>2018/10/06 09:22:10.000.959,C:\Users\Aluno\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\Curso Delphi\Aula 2\Project1.dproj</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
-		<NoProfile iOSSimulator="iPhone5" Android=""/>
+		<NoProfile iOSSimulator="iPhone5" Android="4200dd4ace277411"/>
 	</ActiveMobileDevice>
 </BorlandProject>
