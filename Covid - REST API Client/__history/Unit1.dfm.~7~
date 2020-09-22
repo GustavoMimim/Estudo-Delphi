@@ -1,0 +1,399 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Corona V'#237'rus'
+  ClientHeight = 292
+  ClientWidth = 581
+  Color = clBackground
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 153
+    Height = 292
+    Align = alLeft
+    BevelOuter = bvNone
+    Color = clBackground
+    Ctl3D = True
+    ParentBackground = False
+    ParentCtl3D = False
+    TabOrder = 0
+    object Panel2: TPanel
+      AlignWithMargins = True
+      Left = 5
+      Top = 3
+      Width = 143
+      Height = 65
+      Margins.Left = 5
+      Margins.Right = 5
+      Margins.Bottom = 5
+      Align = alTop
+      Color = 2236962
+      ParentBackground = False
+      TabOrder = 0
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 153
+      object Label1: TLabel
+        AlignWithMargins = True
+        Left = 4
+        Top = 11
+        Width = 135
+        Height = 15
+        Margins.Top = 10
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'Casos globais'
+        Color = 16512
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Roboto'
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        ExplicitWidth = 80
+      end
+      object lblQtdTotalCasos: TLabel
+        Left = 1
+        Top = 29
+        Width = 141
+        Height = 23
+        Align = alTop
+        Alignment = taCenter
+        Caption = '0'
+        Color = clWhite
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -19
+        Font.Name = 'Roboto'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        ExplicitWidth = 11
+      end
+    end
+    object Panel3: TPanel
+      Left = 0
+      Top = 71
+      Width = 153
+      Height = 221
+      Caption = 'Panel3'
+      Color = 2236962
+      Ctl3D = True
+      ParentBackground = False
+      ParentCtl3D = False
+      TabOrder = 1
+      object ListView1: TListView
+        AlignWithMargins = True
+        Left = 6
+        Top = 6
+        Width = 141
+        Height = 209
+        Margins.Left = 5
+        Margins.Top = 5
+        Margins.Right = 5
+        Margins.Bottom = 5
+        Align = alClient
+        Columns = <
+          item
+            AutoSize = True
+            Caption = 'Casos'
+          end
+          item
+            AutoSize = True
+            Caption = 'Pa'#237's'
+          end>
+        ColumnClick = False
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Roboto'
+        Font.Style = []
+        FlatScrollBars = True
+        FullDrag = True
+        GridLines = True
+        HideSelection = False
+        ReadOnly = True
+        RowSelect = True
+        ParentFont = False
+        ShowColumnHeaders = False
+        ShowWorkAreas = True
+        SortType = stBoth
+        TabOrder = 0
+        ViewStyle = vsReport
+        ExplicitWidth = 105
+        ExplicitHeight = 29
+      end
+    end
+  end
+  object RESTPaises: TRESTRequest
+    Client = RESTClient
+    Params = <>
+    Resource = 'v2/countries'
+    Response = RESTResponse1
+    Left = 312
+    Top = 248
+  end
+  object RESTClient: TRESTClient
+    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
+    AcceptCharset = 'utf-8, *;q=0.8'
+    BaseURL = 'https://corona.lmao.ninja'
+    Params = <>
+    Left = 232
+    Top = 248
+  end
+  object FDMemTable1: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'updated'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'country'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'countryInfo'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'cases'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'todayCases'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'deaths'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'todayDeaths'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'recovered'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'todayRecovered'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'active'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'critical'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'casesPerOneMillion'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'deathsPerOneMillion'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'tests'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'testsPerOneMillion'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'population'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'continent'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'oneCasePerPeople'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'oneDeathPerPeople'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'oneTestPerPeople'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'activePerOneMillion'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'recoveredPerOneMillion'
+        DataType = ftWideString
+        Size = 255
+      end
+      item
+        Name = 'criticalPerOneMillion'
+        DataType = ftWideString
+        Size = 255
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvUpdateChngFields, uvUpdateMode, uvLockMode, uvLockPoint, uvLockWait, uvRefreshMode, uvFetchGeneratorsPoint, uvCheckRequired, uvCheckReadOnly, uvCheckUpdatable, uvAutoCommitUpdates]
+    UpdateOptions.LockWait = True
+    UpdateOptions.FetchGeneratorsPoint = gpNone
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    StoreDefs = True
+    Left = 312
+    Top = 192
+    object FDMemTable1updated: TWideStringField
+      FieldName = 'updated'
+      Size = 255
+    end
+    object FDMemTable1country: TWideStringField
+      FieldName = 'country'
+      Size = 255
+    end
+    object FDMemTable1countryInfo: TWideStringField
+      FieldName = 'countryInfo'
+      Size = 255
+    end
+    object FDMemTable1cases: TWideStringField
+      FieldName = 'cases'
+      Size = 255
+    end
+    object FDMemTable1todayCases: TWideStringField
+      FieldName = 'todayCases'
+      Size = 255
+    end
+    object FDMemTable1deaths: TWideStringField
+      FieldName = 'deaths'
+      Size = 255
+    end
+    object FDMemTable1todayDeaths: TWideStringField
+      FieldName = 'todayDeaths'
+      Size = 255
+    end
+    object FDMemTable1recovered: TWideStringField
+      FieldName = 'recovered'
+      Size = 255
+    end
+    object FDMemTable1todayRecovered: TWideStringField
+      FieldName = 'todayRecovered'
+      Size = 255
+    end
+    object FDMemTable1active: TWideStringField
+      FieldName = 'active'
+      Size = 255
+    end
+    object FDMemTable1critical: TWideStringField
+      FieldName = 'critical'
+      Size = 255
+    end
+    object FDMemTable1casesPerOneMillion: TWideStringField
+      FieldName = 'casesPerOneMillion'
+      Size = 255
+    end
+    object FDMemTable1deathsPerOneMillion: TWideStringField
+      FieldName = 'deathsPerOneMillion'
+      Size = 255
+    end
+    object FDMemTable1tests: TWideStringField
+      FieldName = 'tests'
+      Size = 255
+    end
+    object FDMemTable1testsPerOneMillion: TWideStringField
+      FieldName = 'testsPerOneMillion'
+      Size = 255
+    end
+    object FDMemTable1population: TWideStringField
+      FieldName = 'population'
+      Size = 255
+    end
+    object FDMemTable1continent: TWideStringField
+      FieldName = 'continent'
+      Size = 255
+    end
+    object FDMemTable1oneCasePerPeople: TWideStringField
+      FieldName = 'oneCasePerPeople'
+      Size = 255
+    end
+    object FDMemTable1oneDeathPerPeople: TWideStringField
+      FieldName = 'oneDeathPerPeople'
+      Size = 255
+    end
+    object FDMemTable1oneTestPerPeople: TWideStringField
+      FieldName = 'oneTestPerPeople'
+      Size = 255
+    end
+    object FDMemTable1activePerOneMillion: TWideStringField
+      FieldName = 'activePerOneMillion'
+      Size = 255
+    end
+    object FDMemTable1recoveredPerOneMillion: TWideStringField
+      FieldName = 'recoveredPerOneMillion'
+      Size = 255
+    end
+    object FDMemTable1criticalPerOneMillion: TWideStringField
+      FieldName = 'criticalPerOneMillion'
+      Size = 255
+    end
+  end
+  object RESTResponseDataSetAdapter1: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = FDMemTable1
+    FieldDefs = <>
+    Response = RESTResponse1
+    Left = 232
+    Top = 192
+  end
+  object RESTResponse1: TRESTResponse
+    ContentType = 'application/json'
+    Left = 384
+    Top = 192
+  end
+  object RESTAll: TRESTRequest
+    Client = RESTClient
+    Params = <>
+    Resource = 'v2/all'
+    Response = RESTResponse1
+    Left = 368
+    Top = 248
+  end
+end

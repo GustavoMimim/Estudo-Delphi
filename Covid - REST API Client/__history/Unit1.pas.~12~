@@ -1,0 +1,105 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, REST.Types, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client, REST.Client, Data.Bind.Components, Data.Bind.ObjectScope,
+  Vcl.ComCtrls, REST.Response.Adapter, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    RESTPaises: TRESTRequest;
+    RESTClient: TRESTClient;
+    FDMemTable1: TFDMemTable;
+    RESTResponseDataSetAdapter1: TRESTResponseDataSetAdapter;
+    RESTResponse1: TRESTResponse;
+    Panel1: TPanel;
+    RESTAll: TRESTRequest;
+    FDMemTable1updated: TWideStringField;
+    FDMemTable1country: TWideStringField;
+    FDMemTable1countryInfo: TWideStringField;
+    FDMemTable1cases: TWideStringField;
+    FDMemTable1todayCases: TWideStringField;
+    FDMemTable1deaths: TWideStringField;
+    FDMemTable1todayDeaths: TWideStringField;
+    FDMemTable1recovered: TWideStringField;
+    FDMemTable1todayRecovered: TWideStringField;
+    FDMemTable1active: TWideStringField;
+    FDMemTable1critical: TWideStringField;
+    FDMemTable1casesPerOneMillion: TWideStringField;
+    FDMemTable1deathsPerOneMillion: TWideStringField;
+    FDMemTable1tests: TWideStringField;
+    FDMemTable1testsPerOneMillion: TWideStringField;
+    FDMemTable1population: TWideStringField;
+    FDMemTable1continent: TWideStringField;
+    FDMemTable1oneCasePerPeople: TWideStringField;
+    FDMemTable1oneDeathPerPeople: TWideStringField;
+    FDMemTable1oneTestPerPeople: TWideStringField;
+    FDMemTable1activePerOneMillion: TWideStringField;
+    FDMemTable1recoveredPerOneMillion: TWideStringField;
+    FDMemTable1criticalPerOneMillion: TWideStringField;
+    Panel2: TPanel;
+    Label1: TLabel;
+    lblQtdTotalCasos: TLabel;
+    Panel3: TPanel;
+    ListView1: TListView;
+    procedure FormShow(Sender: TObject);
+  private
+    procedure qtdCasosPorPaises();
+    procedure qtdTotalCasos();
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.FormShow(Sender: TObject);
+
+begin
+
+  qtdCasosPorPaises();
+  qtdTotalCasos()
+
+end;
+
+procedure TForm1.qtdCasosPorPaises();
+var
+  i : Integer;
+  Item: TListItem;
+
+begin
+
+  RESTPaises.Execute;
+
+  if RESTResponse1.StatusCode = 200 then
+  begin
+
+    for i := 0 to FDMemTable1.RecordCount - 1 do
+    begin
+
+      Item := ListView1.Items.Add;
+      Item.Caption := FDMemTable1.FieldByName('cases').AsString;
+      Item.SubItems.Add(FDMemTable1.FieldByName('country').AsString);
+
+      FDMemTable1.Next;
+
+    end;
+  end;
+End;
+
+procedure TForm1.qtdTotalCasos();
+begin
+  RESTAll.Execute;
+  lblQtdTotalCasos.Caption := FDMemTable1.FieldByName('cases').AsString;
+End;
+
+end.

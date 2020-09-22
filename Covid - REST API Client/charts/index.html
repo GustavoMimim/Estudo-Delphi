@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="description" content="Bayesean Blog">
+     <meta name="Bayesean Blog" content="">
+     <title> chartjs vault
+     </title>
+     <!-- 
+     <link href="frameworks/bootstrap.min.css" rel="stylesheet">
+     <script src="frameworks/bootstrap.min.js"></script>
+      -->
+     <script src="frameworks/Chart.bundle.min.js"></script>
+     <script src="frameworks/Chart.min.js"></script>
+
+     <style>
+          .bg {
+               background-color: #222222;
+               overflow:hidden;
+          }
+
+          .bg-chart {
+               max-height: 100%;
+          }
+     </style>
+</head>
+
+<body class='bg'>
+     <canvas class='bg-chart' id="doughnut-chart"></canvas>
+</body>
+
+</html>
+<script>new Chart("doughnut-chart",{    type: "bar",     data:     {      labels: ["23/08", "24/08", "25/08", "26/08", "27/08", "28/08", "29/08", "30/08", "31/08", "01/09", "02/09", "03/09", "04/09", "05/09", "06/09", "07/09", "08/09", "09/09", "10/09", "11/09", "12/09", "13/09", "14/09", "15/09", "16/09", "17/09", "18/09", "19/09", "20/09", "21/09", ],      datasets:       [        {          data: ["23410383", "23636482", "23878519", "24166445", "24445652", "24727072", "24988837", "25215048", "25477252", "25742176", "26024054", "26304856", "26617971", "26881547", "27103845", "27337760", "27570742", "27862680", "28161434", "28481322", "28758945", "28995373", "29274650", "29557942", "29861949", "30175313", "30499534", "30780755", "31021972", "31320880", ],          borderColor: "orange",          backgroundColor: "orange",          label: "Casos",        }      ]    }});</script>
