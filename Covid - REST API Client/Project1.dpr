@@ -2,8 +2,8 @@ program Project1;
 
 uses
   Vcl.Forms,
-  Unit1 in 'Unit1.pas' {Form1},
-  Unit2 in 'Unit2.pas' {SplashScreen};
+  frmMain in 'frmMain.pas' {Form1},
+  frmSplashScreen in 'frmSplashScreen.pas' {SplashScreen};
 
 {$R *.res}
 
@@ -18,9 +18,8 @@ begin
     SplashScreen.Show;
 
     Application.CreateForm(TForm1, Form1);
-
     while not SplashScreen.Completed do
-      Application.ProcessMessages;
+        Application.ProcessMessages;
 
     SplashScreen.Hide;
 

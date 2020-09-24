@@ -1,0 +1,46 @@
+object SplashScreen: TSplashScreen
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  ClientHeight = 100
+  ClientWidth = 200
+  Color = 2236962
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  Visible = True
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 200
+    Height = 100
+    Color = 2236962
+    ParentBackground = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 16
+      Top = 40
+      Width = 169
+      Height = 13
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Carregando...'
+      Color = 2236962
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clSilver
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      WordWrap = True
+    end
+  end
+end
