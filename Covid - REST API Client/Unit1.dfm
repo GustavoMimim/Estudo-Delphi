@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Corona V'#237'rus'
-  ClientHeight = 440
-  ClientWidth = 830
+  ClientHeight = 618
+  ClientWidth = 1384
   Color = clBackground
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,14 +11,15 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  OnShow = FormShow
+  Visible = True
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object leftMenu: TPanel
     Left = 0
     Top = 41
     Width = 249
-    Height = 399
+    Height = 577
     Align = alLeft
     BevelOuter = bvNone
     Color = clBackground
@@ -52,30 +53,9 @@ object Form1: TForm1
       ParentFont = False
       TabOrder = 0
       StyleElements = [seFont, seClient]
-      object Label1: TLabel
-        AlignWithMargins = True
-        Left = 3
-        Top = 10
-        Width = 233
-        Height = 16
-        Margins.Top = 10
-        Align = alTop
-        Alignment = taCenter
-        Caption = 'Casos globais'
-        Color = clBackground
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWhite
-        Font.Height = -13
-        Font.Name = 'Arial'
-        Font.Style = []
-        ParentColor = False
-        ParentFont = False
-        Transparent = True
-        ExplicitWidth = 82
-      end
       object lblQtdTotalCasos: TLabel
         Left = 0
-        Top = 29
+        Top = 22
         Width = 239
         Height = 27
         Align = alTop
@@ -92,13 +72,33 @@ object Form1: TForm1
         Transparent = True
         ExplicitWidth = 13
       end
+      object Label4: TLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 233
+        Height = 14
+        Margins.Bottom = 5
+        Align = alTop
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Casos globais'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = 12434877
+        Font.Height = -11
+        Font.Name = 'Roboto'
+        Font.Style = []
+        ParentFont = False
+        ExplicitLeft = 6
+        ExplicitTop = 11
+      end
     end
     object casesByCountries: TPanel
       AlignWithMargins = True
       Left = 5
       Top = 70
       Width = 239
-      Height = 254
+      Height = 432
       Margins.Left = 5
       Margins.Top = 0
       Margins.Right = 5
@@ -134,7 +134,7 @@ object Form1: TForm1
         Left = 0
         Top = 22
         Width = 239
-        Height = 232
+        Height = 410
         Margins.Left = 5
         Margins.Top = 5
         Margins.Right = 5
@@ -154,16 +154,15 @@ object Form1: TForm1
           end
           item
             Caption = 'Pa'#237's'
-            Width = 184
+            Width = 166
           end>
         ColumnClick = False
         Ctl3D = False
         Font.Charset = ANSI_CHARSET
-        Font.Color = 12434877
-        Font.Height = -11
+        Font.Color = clRed
+        Font.Height = -12
         Font.Name = 'Roboto'
         Font.Style = []
-        FlatScrollBars = True
         GridLines = True
         HideSelection = False
         ReadOnly = True
@@ -175,12 +174,13 @@ object Form1: TForm1
         SortType = stBoth
         TabOrder = 0
         ViewStyle = vsReport
+        OnAdvancedCustomDrawSubItem = ListView1AdvancedCustomDrawSubItem
       end
     end
     object lastUpdate: TPanel
       AlignWithMargins = True
       Left = 5
-      Top = 329
+      Top = 507
       Width = 239
       Height = 65
       Margins.Left = 5
@@ -216,7 +216,6 @@ object Form1: TForm1
         ParentColor = False
         ParentFont = False
         Transparent = True
-        ExplicitTop = 29
         ExplicitWidth = 12
       end
       object Label3: TLabel
@@ -244,7 +243,7 @@ object Form1: TForm1
   object Panel4: TPanel
     Left = 0
     Top = 0
-    Width = 830
+    Width = 1384
     Height = 41
     Align = alTop
     BevelOuter = bvNone
@@ -254,7 +253,7 @@ object Form1: TForm1
       AlignWithMargins = True
       Left = 5
       Top = 5
-      Width = 820
+      Width = 1374
       Height = 31
       Margins.Left = 5
       Margins.Top = 5
@@ -269,7 +268,7 @@ object Form1: TForm1
         AlignWithMargins = True
         Left = 50
         Top = 7
-        Width = 767
+        Width = 1291
         Height = 21
         Margins.Left = 50
         Margins.Top = 7
@@ -286,14 +285,66 @@ object Form1: TForm1
         ExplicitWidth = 566
         ExplicitHeight = 19
       end
+      object Image1: TImage
+        AlignWithMargins = True
+        Left = 1347
+        Top = 3
+        Width = 24
+        Height = 25
+        Align = alRight
+        Picture.Data = {
+          0954506E67496D61676589504E470D0A1A0A0000000D49484452000000180000
+          00180806000000E0773DF80000000473424954080808087C0864880000000970
+          485973000000A6000000A601DD7DFF380000001974455874536F667477617265
+          007777772E696E6B73636170652E6F72679BEE3C1A000002764944415478DAB5
+          554B68134118FE6657B36B7C80E01B0A16295E4411155B6B9BF5A0A0271F8827
+          2DA8881E8328681114B447E95128422BC54305C58388E023DD94D2632B561445
+          8A1429546FA649B6ED8CDF365133DB3CA63E36647666F69FEFFBDF23945258D0
+          93765F418921B466AF98888B0513F8EECF039D68CD25FF278111497582947061
+          3B0928B58BA23BB9C3373644A4AA9254261888EFC6ACEC81C0E69A5609D18196
+          6CBB19C15B11C357F706A02E71659B3A8E5624CC087CF709C74386C0E13301A9
+          F6C1CBBFAB4DE02F69A3E6DD65E442A1106090FF33A6E03A417AE97A28394AAC
+          9511EC2148FB38BCA9F1A285CA145C27F09D1E2E4F453EDF4726771A0755BEC4
+          8501C76F26E01102F733C7BA12CD09126C84A7BE6B27FADDFDACE40FF0B26326
+          012A10A456AC82154CEA9E51ED48E43B4C406A13F8EE01CE9F695FA4DC0E2F18
+          FE37046937C93CB9FD5704734A8A3D45D40CE2F94EEC50D34502E730FDFAE88F
+          095EBA9BB008EF515A98429C6475F716085E2C5B8BC5331311E36EB2255F3322
+          E877AE12F096AE201AE0E53E9666D1278EF5252253B0ED063467BE54057F2A1C
+          C49D9148CF1A63EBA8FF1D83392DDC2E0A9DD50E2BD58B441056B7AC10428BF5
+          D3C7C9317D1B5D68C99DD3090697AFC1CCF41BCE5647505E438A8BCCFBE7DA6E
+          CAD9024BB029E268443E074B36626F30A213147C7984BE7C58C1193EC5C721E4
+          2CDF75CC3AAFBC51B840EDEFFC5ACEEFA64E37B7DB6A06B63C7A1F13E384B633
+          8FE081B0B12E7699697B9DAB9821B2E2EF2E543E196D2D556EB4D83648EB1E67
+          5B6B408F4259E7D96D07CADA54F54E0E6FB749B79949DD44D126FAB71161FA2A
+          065E08A6A61C463C781C566C25881F032923E019479F600000000049454E44AE
+          426082}
+        OnClick = Image1Click
+        ExplicitLeft = 1350
+        ExplicitTop = 5
+        ExplicitHeight = 31
+      end
+      object Label1: TLabel
+        Left = 1287
+        Top = 8
+        Width = 54
+        Height = 15
+        Caption = 'Atualizar'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = 49663
+        Font.Height = -13
+        Font.Name = 'Roboto Bk'
+        Font.Style = []
+        ParentFont = False
+        OnClick = Label1Click
+      end
     end
   end
   object WebBrowser1: TWebBrowser
     AlignWithMargins = True
     Left = 249
     Top = 41
-    Width = 576
-    Height = 394
+    Width = 1130
+    Height = 572
     Margins.Left = 0
     Margins.Top = 0
     Margins.Right = 5
@@ -305,7 +356,7 @@ object Form1: TForm1
     ExplicitWidth = 446
     ExplicitHeight = 288
     ControlData = {
-      4C000000883B0000B92800000000000000000000000000000000000000000000
+      4C000000CA7400001E3B00000000000000000000000000000000000000000000
       000000004C000000000000000000000001000000E0D057007335CF11AE690800
       2B2E126208000000000000004C0000000114020000000000C000000000000046
       8000000000000000000000000000000000000000000000000000000000000000
@@ -314,9 +365,9 @@ object Form1: TForm1
   object RESTCountries: TRESTRequest
     Client = RESTClient
     Params = <>
-    Resource = 'v3/covid-19/countries'
+    Resource = 'v3/covid-19/countries?sort=cases'
     Response = RESTResponse1
-    Left = 344
+    Left = 336
     Top = 240
   end
   object RESTClient: TRESTClient
@@ -328,6 +379,7 @@ object Form1: TForm1
     Top = 200
   end
   object FDMemTable1: TFDMemTable
+    AutoCalcFields = False
     FieldDefs = <>
     IndexDefs = <>
     FetchOptions.AssignedValues = [evMode]
@@ -360,7 +412,7 @@ object Form1: TForm1
     Params = <>
     Resource = 'v3/covid-19/all'
     Response = RESTResponse1
-    Left = 376
+    Left = 368
     Top = 240
   end
   object RESTHistorical: TRESTRequest
@@ -368,7 +420,7 @@ object Form1: TForm1
     Params = <>
     Resource = 'v3/covid-19/historical/all?lastdays=30'
     Response = RESTResponse1
-    Left = 408
+    Left = 400
     Top = 240
   end
 end

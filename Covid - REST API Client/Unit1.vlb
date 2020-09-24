@@ -2,29 +2,29 @@
 Coordinates=150,10,70,69
 
 []
-Coordinates=40,700,46,51
+Coordinates=52,77,91,36
 Visible=True
 
 [RESTAll]
 Coordinates=280,120,76,87
 
 [Label2]
-Coordinates=100,700,46,51
+Coordinates=351,469,46,51
 
 [Panel5]
-Coordinates=100,630,47,51
+Coordinates=351,399,47,51
 
 [ListView1]
-Coordinates=170,560,97,195
+Coordinates=630,20,97,195
 
 [FDMemTable1]
-Coordinates=400,10,84,105
+Coordinates=509,20,84,105
 
 [lblQtdTotalCasos]
-Coordinates=300,560,99,51
+Coordinates=551,329,99,51
 
 [Panel4]
-Coordinates=300,700,47,51
+Coordinates=551,469,47,51
 
 [RESTResponse1]
 Coordinates=150,100,96,303
@@ -33,32 +33,41 @@ Coordinates=150,100,96,303
 Coordinates=276,812,174,33
 
 [lblUltimaAtt]
-Coordinates=440,560,72,51
-
-[Label1]
-Coordinates=40,630,46,51
+Coordinates=691,329,72,51
 
 [leftMenu]
-Coordinates=99,561,56,51
+Coordinates=350,330,56,51
 
 [globalCases]
-Coordinates=370,700,75,51
+Coordinates=621,469,75,51
 
 [casesByCountries]
-Coordinates=300,630,104,51
+Coordinates=551,399,104,51
 
 [lastUpdate]
-Coordinates=370,630,66,51
+Coordinates=621,399,66,51
 
 [lblTitulo]
-Coordinates=40,561,54,51
+Coordinates=291,330,54,51
 
 [RESTCountries]
 Coordinates=280,10,89,87
 
 [WebBrowser1]
-Coordinates=510,50,83,33
+Coordinates=860,20,83,33
 
 [RESTHistorical]
 Coordinates=41,132,88,87
+
+[Label3]
+Coordinates=0,0,46,51
+
+[Label4]
+Coordinates=72,1,46,51
+
+[Label1]
+Coordinates=53,70,46,51
+
+[Image1]
+Coordinates=284,226,49,51
 

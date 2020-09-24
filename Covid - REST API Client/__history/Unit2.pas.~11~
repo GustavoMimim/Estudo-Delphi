@@ -1,0 +1,40 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, Vcl.StdCtrls, Vcl.Imaging.GIFImg;
+
+type
+    TSplashScreen = class(TForm)
+    Image1: TImage;
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    Completed: Boolean;
+  end;
+
+var
+  SplashScreen: TSplashScreen;
+
+implementation
+
+{$R *.dfm}
+
+procedure TSplashScreen.FormShow(Sender: TObject);
+begin
+
+  ( Image1.Picture.Graphic as TGIFImage ).Animate := True;// gets it goin'
+
+  ( Image1.Picture.Graphic as TGIFImage ).AnimationSpeed:= 500;// adjust your speed
+
+  SplashScreen.DoubleBuffered := True;// stops flickering
+
+
+  Completed := False;
+
+end;
+
+end.

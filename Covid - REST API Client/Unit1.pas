@@ -3,15 +3,15 @@ unit Unit1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  Unit2, Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, REST.Types, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, Data.DB, FireDAC.Comp.DataSet,
   FireDAC.Comp.Client, REST.Client, Data.Bind.Components, Data.Bind.ObjectScope,
   Vcl.ComCtrls, REST.Response.Adapter, Vcl.ExtCtrls, Vcl.StdCtrls, System.Rtti,
-  System.Bindings.Outputs, Data.Bind.EngExt, Vcl.Bind.DBEngExt, StrUtils,
-  Vcl.OleCtrls, SHDocVw, System.JSON;
+  System.Bindings.Outputs, Data.Bind.EngExt, Vcl.Bind.DBEngExt, StrUtils, SHDocVw,
+  Vcl.OleCtrls, Vcl.Bind.Editors, Data.Bind.DBScope, Vcl.Imaging.pngimage;
 
 type
   TForm1 = class(TForm)
@@ -23,7 +23,6 @@ type
     leftMenu: TPanel;
     RESTAll: TRESTRequest;
     globalCases: TPanel;
-    Label1: TLabel;
     lblQtdTotalCasos: TLabel;
     casesByCountries: TPanel;
     ListView1: TListView;
@@ -36,11 +35,21 @@ type
     WebBrowser1: TWebBrowser;
     RESTHistorical: TRESTRequest;
     Label3: TLabel;
-    procedure FormShow(Sender: TObject);
-    procedure webbrowserstart;
-  private
+    Label4: TLabel;
+    Image1: TImage;
+    Label1: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure ListView1AdvancedCustomDrawSubItem(Sender: TCustomListView;
+      Item: TListItem; SubItem: Integer; State: TCustomDrawState;
+      Stage: TCustomDrawStage; var DefaultDraw: Boolean);
+    procedure Label1Click(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
+    procedure buscarDados();
+    procedure atualizarDados();
     procedure qtdCasosPorPaises();
     procedure dadosGerais();
+    procedure webbrowserstart;
+    function dateUSAtoBR(date: string): string;
   public
     { Public declarations }
   end;
@@ -52,13 +61,64 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm1.FormShow(Sender: TObject);
+procedure TForm1.FormCreate(Sender: TObject);
+begin
 
+  buscarDados();
+
+end;
+
+procedure TForm1.Image1Click(Sender: TObject);
+begin
+
+  atualizarDados();
+
+end;
+
+procedure TForm1.atualizarDados();
+begin
+
+  try
+    SplashScreen.Show;
+
+    buscarDados();
+
+    while not SplashScreen.Completed do
+      Application.ProcessMessages;
+
+    SplashScreen.Hide;
+
+  finally
+
+    //SplashScreen.Free;
+
+  end;
+
+end;
+
+procedure TForm1.buscarDados();
 begin
 
   qtdCasosPorPaises();
   dadosGerais();
   webbrowserstart();
+  SplashScreen.Completed := true;
+
+end;
+
+procedure TForm1.Label1Click(Sender: TObject);
+begin
+
+  atualizarDados();
+
+end;
+
+procedure TForm1.ListView1AdvancedCustomDrawSubItem(Sender: TCustomListView;
+  Item: TListItem; SubItem: Integer; State: TCustomDrawState;
+  Stage: TCustomDrawStage; var DefaultDraw: Boolean);
+begin
+
+    Sender.Canvas.Font.Color := $00BDBDBD;
 
 end;
 
@@ -69,10 +129,15 @@ var
 
 begin
 
+  RESTResponse1.CleanupInstance;
+  RESTResponseDataSetAdapter1.CleanupInstance;
+
   RESTCountries.Execute;
 
   if RESTResponse1.StatusCode = 200 then
   begin
+
+    ListView1.Clear;
 
     for i := 0 to FDMemTable1.RecordCount - 1 do
     begin
@@ -107,10 +172,11 @@ var
   i: Integer;
   casos: string;
 
-  fmt: TFormatSettings;
-  dateFormated: string;
+  //fmt: TFormatSettings;
 
 begin
+
+  RESTResponseDataSetAdapter1.ClearDataSet;
 
   RESTHistorical.Execute;
 
@@ -119,13 +185,15 @@ begin
 
     RESTResponseDataSetAdapter1.RootElement := 'cases';
 
-    fmt.ShortDateFormat := 'm/d/y';
-    fmt.DateSeparator   := '/';
+    //fmt.ShortDateFormat := 'm/d/y';
+    //fmt.DateSeparator   := '/';
 
     for i := 0 to FDMemTable1.FieldCount - 1 do
     begin
       //ShowMessage(FormatDateTime('dd/mm', StrToDateTime(FDMemTable1.Fields[i].FieldName, fmt)));
-      labels := labels + '"' + FormatDateTime('dd/mm', StrToDateTime(FDMemTable1.Fields[i].FieldName, fmt)) + '", ';
+      // O ideal seria utilizar o Format acima, mas por algum motivo ele só está funcionando com o ShowMessage
+
+      labels := labels + '"' + dateUSAtoBR(FDMemTable1.Fields[i].FieldName) + '", ';
       values := values + '"' + FDMemTable1.Fields[i].AsString + '", ';
     end;
 
@@ -165,6 +233,26 @@ begin
     end;
 
   end;
+end;
+
+{ Converte data no formato m/d/yy para dd/mm }
+function TForm1.dateUSAtoBR(date: string): string;
+var
+  posBarra1: Integer;
+  posBarra2: Integer;
+  month: Integer;
+  day: Integer;
+
+begin
+
+    posBarra1 := Pos('/', date);
+    posBarra2 := Pos('/', Copy(date, posBarra1 + 1, Length(date)));
+
+    day := StrToInt(Copy(date, posBarra1 + 1, posBarra2 - 1));
+    month := StrToInt(Copy(date, 0, posBarra1 - 1));
+
+    Result := Format('%.2d', [day]) + '/' + Format('%.2d', [month]);
+
 end;
 
 end.
